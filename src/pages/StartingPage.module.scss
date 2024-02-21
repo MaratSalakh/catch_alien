@@ -1,0 +1,42 @@
+.startingPage {
+  background-image: url('/src/assets/pixel-cityscape-8-bit-pixel-art-game-landscape-vector\ 1.svg');
+  background-color: red;
+  background-repeat: repeat-x;
+  background-size: cover;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting {
+  margin-top: 20vh;
+  color: yellow;
+  font-size: 30px;
+  font-weight: bolder;
+  width: 50vw;
+  text-align: center;
+}
+
+.alienBubble {
+  background-image: url('/src/assets/alienInBubble.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.startButton {
+  margin-top: 35vh;
+  color: white;
+  background-color: #f14338;
+  border-radius: 6px;
+  border-style: none;
+  padding: 20px;
+
+  &:hover {
+    background-color: #de2a1d;
+  }
+}
