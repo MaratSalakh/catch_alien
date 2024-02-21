@@ -1,0 +1,54 @@
+.startingPage {
+  background-image: url('/src/assets/pixel-cityscape-8-bit-pixel-art-game-landscape-vector\ 1.svg');
+  background-repeat: repeat-x;
+  background-size: cover;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.woodenBG {
+  margin: 20px;
+  height: 90vh;
+  width: 80vw;
+  background-size: cover;
+  background-image: url('/src/assets/woodenBG.svg');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.alienBubble {
+  background-image: url('/src/assets/alienInBubble.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70vw;
+  height: 40vh;
+}
+
+.instruction {
+  background-image: url('/src/assets/Нажимай\ на\ НЛО\ и\ отравляй\ их\ В\ ДАЛЕКИЙ\ КОСМОС!.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 20vh;
+  height: 100px;
+  width: 240px;
+}
+
+.startButton {
+  color: white;
+  background-color: #f14338;
+  border-radius: 6px;
+  border-style: none;
+  margin-bottom: 5vh;
+  width: 50vw;
+  padding: 5vw;
+
+  &:hover {
+    background-color: #de2a1d;
+  }
+}
