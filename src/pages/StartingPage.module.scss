@@ -10,8 +10,17 @@
   align-items: center;
 }
 
+.alienBubble {
+  background-image: url('/src/assets/alienInBubble.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 10vh;
+  width: 40vw;
+  height: 70vh;
+}
+
 .greeting {
-  margin-top: 20vh;
+  margin-top: 10vh;
   color: yellow;
   font-size: 30px;
   font-weight: bolder;
@@ -19,18 +28,12 @@
   text-align: center;
 }
 
-.alienBubble {
-  background-image: url('/src/assets/alienInBubble.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 20px;
-  width: 100px;
-  height: 100px;
-}
-
 .startButton {
   margin-top: 35vh;
+  margin-bottom: 5vh;
   color: white;
+  font-weight: bold;
+  font-size: xx-large;
   background-color: #f14338;
   border-radius: 6px;
   border-style: none;
