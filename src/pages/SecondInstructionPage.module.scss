@@ -22,12 +22,31 @@
   justify-content: space-around;
 }
 
-.alienBubble {
-  background-image: url('/src/assets/goodAlien.svg');
+.alien {
+  background-image: url('/src/assets/shipYellow_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35vw;
+  height: 30vh;
+  margin-top: 20px;
+}
+
+.stoppedAlien {
+  background-image: url('/src/assets/stop.svg'),
+    url('/src/assets/shipYellow_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35vw;
+  height: 30vh;
+  margin-top: 20px;
+}
+
+.hand {
+  background-image: url('/src/assets/hand.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 70vw;
-  height: 40vh;
+  width: 25vw;
+  height: 25vh;
 }
 
 .instruction {
@@ -35,8 +54,9 @@
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 20vh;
+  margin-bottom: 10px;
   height: 100px;
-  width: 240px;
+  width: 220px;
 }
 
 .startButton {
