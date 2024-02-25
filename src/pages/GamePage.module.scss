@@ -1,0 +1,65 @@
+.game {
+  background-image: url('/src/assets/pixel-cityscape-8-bit-pixel-art-game-landscape-vector\ 1.svg');
+  background-repeat: repeat-x;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 5% 75% 5% 5%;
+  justify-items: center;
+  align-items: center;
+}
+
+.alien {
+  background-image: url('/src/assets/shipGreen_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  justify-self: start;
+  align-self: flex-start;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.bubbledAlien {
+  background-image: url('/src/assets/Bubble.svg'),
+    url('/src/assets/shipGreen_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 35vw;
+  height: 30vh;
+  margin-top: 20px;
+}
+
+.unit1 {
+  background-image: url('/src/assets/man1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 80px;
+  justify-self: start;
+  align-self: flex-start;
+}
+
+.unit2 {
+  background-image: url('/src/assets/men2.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 80px;
+  justify-self: start;
+  align-self: flex-start;
+}
+
+.unit3 {
+  background-image: url('/src/assets/men3.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 80px;
+  justify-self: start;
+  align-self: flex-start;
+}
