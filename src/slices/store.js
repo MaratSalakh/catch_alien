@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import timerReducer from './timerSlice.js';
-import catchedAliensReducer from './catchedAliensSlice.js';
+import aliensReducer from './aliensSlice.js';
 
 export default configureStore({
   reducer: {
     timer: timerReducer,
-    catchedAliens: catchedAliensReducer,
+    aliens: aliensReducer,
   },
 });

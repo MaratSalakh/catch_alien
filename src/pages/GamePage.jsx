@@ -3,42 +3,25 @@ import { useEffect, useRef } from 'react';
 import styles from './GamePage.module.scss';
 
 import { saveTime } from '../slices/timerSlice';
-import { addAlien } from '../slices/catchedAliensSlice';
 
 import { useDispatch, useSelector } from 'react-redux';
 
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import { BadAlien } from '../components/BadAlien';
+import { GoodAlien } from '../components/GoodAlien';
+
 const GamePage = () => {
   const dispatch = useDispatch();
   const time = useSelector((state) => state.timer.value);
-  const catchedAliens = useSelector((state) => state.catchedAliens.value);
+  const catchedAliens = useSelector(
+    (state) => state.aliens.catchedAliensCounter
+  );
 
-  const alien = useRef();
   const unit1 = useRef();
   const unit2 = useRef();
   const unit3 = useRef();
-
-  useGSAP(() => {
-    const animate = () => {
-      const element = alien.current;
-      if (element) {
-        const randomX = Math.random() * 300;
-        const randomY = Math.random() * 500;
-
-        gsap.to(element, {
-          duration: 4,
-          x: randomX,
-          y: randomY,
-          ease: 'none',
-          onComplete: animate, // Call the function again when the animation completes
-        });
-      }
-    };
-
-    animate();
-  });
 
   useGSAP(() => {
     const animate = () => {
@@ -99,27 +82,23 @@ const GamePage = () => {
   });
 
   useEffect(() => {
-    if (time > 29) {
+    if (time > 8) {
       return;
     }
 
-    const intervalId = setInterval(() => {
+    const intervalOfGame = setInterval(() => {
       dispatch(saveTime(1));
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalOfGame);
   });
 
   return (
     <div className={styles.game}>
       <div>{time}</div>
       <div>{catchedAliens}</div>
-      <div className={styles.alienWithText} ref={alien}>
-        <div
-          className={styles.alien}
-          onClick={() => dispatch(addAlien())}></div>
-        <div className={styles.textOfAlien}></div>
-      </div>
+      <GoodAlien></GoodAlien>
+      <BadAlien></BadAlien>
       <div ref={unit1} className={styles.unit1}></div>
       <div ref={unit2} className={styles.unit2}></div>
       <div ref={unit3} className={styles.unit3}></div>
