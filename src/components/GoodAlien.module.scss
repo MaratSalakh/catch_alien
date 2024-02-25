@@ -1,0 +1,28 @@
+.alienWithText {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-self: start;
+  align-self: flex-start;
+
+  width: 100px;
+  height: 200px;
+}
+
+.textOfAlien {
+  background-image: url('/src/assets/У\ ВАС\ ЕСТЬ\ МАКАРОНЫ\ ПО\ СКИДКЕ_.svg'),
+    url('/src/assets/бабл.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
+.goodAlien {
+  background-image: url('/src/assets/shipYellow_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
