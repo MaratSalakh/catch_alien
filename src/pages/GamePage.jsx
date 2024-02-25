@@ -28,10 +28,10 @@ const GamePage = () => {
         const randomY = Math.random() * 500;
 
         gsap.to(element, {
-          duration: 2,
+          duration: 4,
           x: randomX,
           y: randomY,
-          ease: 'expo.out',
+          ease: 'none',
           onComplete: animate, // Call the function again when the animation completes
         });
       }
@@ -114,10 +114,12 @@ const GamePage = () => {
     <div className={styles.game}>
       <div>{time}</div>
       <div>{catchedAliens}</div>
-      <div
-        ref={alien}
-        className={styles.alien}
-        onClick={() => dispatch(addAlien())}></div>
+      <div className={styles.alienWithText} ref={alien}>
+        <div
+          className={styles.alien}
+          onClick={() => dispatch(addAlien())}></div>
+        <div className={styles.textOfAlien}></div>
+      </div>
       <div ref={unit1} className={styles.unit1}></div>
       <div ref={unit2} className={styles.unit2}></div>
       <div ref={unit3} className={styles.unit3}></div>

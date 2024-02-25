@@ -12,16 +12,36 @@
   align-items: center;
 }
 
+.alienWithText {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-self: start;
+  align-self: flex-start;
+
+  width: 100px;
+  height: 200px;
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.textOfAlien {
+  background-image: url('/src/assets/У\ ВАС\ ЕСТЬ\ МАКАРОНЫ\ ПО\ СКИДКЕ_.svg'),
+    url('/src/assets/бабл.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
 .alien {
   background-image: url('/src/assets/shipGreen_manned.svg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100px;
   height: 100px;
-  justify-self: start;
-  align-self: flex-start;
-  grid-column-start: 1;
-  grid-column-end: 3;
 }
 
 .bubbledAlien {
