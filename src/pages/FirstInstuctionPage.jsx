@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 import styles from './FirstInstructionPage.module.scss';
+import { Link } from 'react-router-dom';
 
 const FirstInctructionPage = () => {
   const [alienIsBubbled, setAlienIsBubbled] = useState(false);
@@ -42,7 +43,9 @@ const FirstInctructionPage = () => {
         )}
         <div ref={container} className={styles.hand}></div>
         <div className={styles.instruction}></div>
-        <button className={styles.startButton}>ЯСНО</button>
+        <Link className={styles.startButton} to="/2">
+          ЯСНО
+        </Link>
       </div>
     </div>
   );

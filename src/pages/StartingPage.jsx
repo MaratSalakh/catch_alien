@@ -4,6 +4,7 @@ import { useRef } from 'react';
 
 import gsap from 'gsap'; // <-- import GSAP
 import { useGSAP } from '@gsap/react'; // <-- import the hook from our React package
+import { Link } from 'react-router-dom';
 
 const StartingPage = () => {
   const container = useRef();
@@ -24,7 +25,9 @@ const StartingPage = () => {
         ref={container}
         className={('alienBubble', styles.alienBubble)}></div>
       <span className={styles.greeting}>Поймай пришельца!</span>
-      <button className={styles.startButton}>НАЧАТЬ</button>
+      <Link className={styles.startButton} to="/1">
+        НАЧАТЬ
+      </Link>
     </div>
   );
 };

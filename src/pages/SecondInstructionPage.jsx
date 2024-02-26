@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { Link } from 'react-router-dom';
 
 const SecondInctructionPage = () => {
   const [alienIsStopped, setAlienIsStopped] = useState(false);
@@ -42,7 +43,9 @@ const SecondInctructionPage = () => {
         )}
         <div ref={container} className={styles.hand}></div>
         <div className={styles.instruction}></div>
-        <button className={styles.startButton}>ПОГНАЛИ</button>
+        <Link className={styles.startButton} to="/game">
+          ПОГНАЛИ
+        </Link>
       </div>
     </div>
   );
