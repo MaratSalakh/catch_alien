@@ -3,7 +3,12 @@ import styles from './GoodAlien.module.scss';
 import { useEffect, useRef } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { hideTextGood, addStop, removeStop } from '../slices/aliensSlice';
+import {
+  hideTextGood,
+  addStop,
+  removeStop,
+  showTextGood,
+} from '../slices/aliensSlice';
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -53,7 +58,11 @@ export const GoodAlien = () => {
       <div
         onClick={() => {
           dispatch(addStop());
-          setTimeout(() => dispatch(removeStop()), 4000);
+          dispatch(showTextGood());
+          setTimeout(() => {
+            dispatch(removeStop());
+            dispatch(hideTextGood());
+          }, 4000);
         }}
         className={styles.goodAlien}></div>
     );

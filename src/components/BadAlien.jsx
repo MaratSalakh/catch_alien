@@ -33,12 +33,6 @@ export const BadAlien = () => {
     }, 5000);
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      dispatch(hideTextBad());
-    }, 15000);
-  });
-
   const movementTop = () => {
     gsap.to(badAlien.current, {
       duration: 3,
@@ -86,6 +80,9 @@ export const BadAlien = () => {
             dispatch(removeBubble());
             dispatch(showTextBad());
           }, 3000);
+          setTimeout(() => {
+            dispatch(hideTextBad());
+          }, 8000);
         }}></div>
     );
 
