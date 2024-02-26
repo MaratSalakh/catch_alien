@@ -23,6 +23,7 @@ const GamePage = () => {
   const unit2 = useRef();
   const unit3 = useRef();
 
+  //unit1
   useGSAP(() => {
     const animate = () => {
       const element = unit1.current;
@@ -31,7 +32,7 @@ const GamePage = () => {
         const randomY = Math.random() * 50;
 
         gsap.to(element, {
-          duration: 2,
+          duration: 1,
           x: randomX,
           y: randomY,
           ease: 'none',
@@ -43,6 +44,7 @@ const GamePage = () => {
     animate();
   });
 
+  //unit2
   useGSAP(() => {
     const animate = () => {
       const element = unit2.current;
@@ -51,7 +53,7 @@ const GamePage = () => {
         const randomY = Math.random() * 50;
 
         gsap.to(element, {
-          duration: 2,
+          duration: 1,
           x: randomX,
           y: randomY,
           ease: 'none',
@@ -63,6 +65,7 @@ const GamePage = () => {
     animate();
   });
 
+  //unit3
   useGSAP(() => {
     const animate = () => {
       const element = unit3.current;
@@ -70,7 +73,7 @@ const GamePage = () => {
         const randomX = Math.random() * 150;
 
         gsap.to(element, {
-          duration: 2,
+          duration: 1,
           x: randomX,
           ease: 'none',
           onComplete: animate, // Call the function again when the animation completes
@@ -82,7 +85,7 @@ const GamePage = () => {
   });
 
   useEffect(() => {
-    if (time > 8) {
+    if (time > 29) {
       return;
     }
 
