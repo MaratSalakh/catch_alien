@@ -8,6 +8,7 @@ import {
   removeBubble,
   addCatchedAlien,
   addBubble,
+  showTextBad,
 } from '../slices/aliensSlice';
 
 import { useGSAP } from '@gsap/react';
@@ -31,6 +32,12 @@ export const BadAlien = () => {
       dispatch(hideTextBad());
     }, 5000);
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(hideTextBad());
+    }, 15000);
+  });
 
   const movementTop = () => {
     gsap.to(badAlien.current, {
@@ -75,7 +82,10 @@ export const BadAlien = () => {
           dispatch(addBubble());
           dispatch(addCatchedAlien());
           movementTop();
-          setTimeout(() => dispatch(removeBubble()), 3000);
+          setTimeout(() => {
+            dispatch(removeBubble());
+            dispatch(showTextBad());
+          }, 3000);
         }}></div>
     );
 
