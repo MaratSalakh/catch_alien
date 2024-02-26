@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  justify-self: start;
+  justify-self: end;
   align-self: flex-start;
 
   width: 100px;
@@ -21,6 +21,15 @@
 
 .badAlien {
   background-image: url('/src/assets/shipGreen_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
+.bubbledAlien {
+  background-image: url('/src/assets/Bubble.svg'),
+    url('/src/assets/shipGreen_manned.svg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100px;

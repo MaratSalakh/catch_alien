@@ -1,10 +1,15 @@
 import styles from './BadAlien.module.scss';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { useDispatch } from 'react-redux';
-import { addCatchedAlien } from '../slices/aliensSlice';
-import { hideTextBad } from '../slices/aliensSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  hideTextBad,
+  removeBubble,
+  addCatchedAlien,
+  addBubble,
+} from '../slices/aliensSlice';
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -13,38 +18,71 @@ export const BadAlien = () => {
 
   const badAlien = useRef();
 
-  setTimeout(() => {
-    dispatch(hideTextBad());
-  }, 5000);
+  const textIsHide = useSelector(
+    (state) => state.aliens.entities.alienBad.textIsHide
+  );
+
+  const alienIsBubbled = useSelector(
+    (state) => state.aliens.entities.alienBad.isBubbled
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(hideTextBad());
+    }, 5000);
+  }, []);
+
+  const movementTop = () => {
+    gsap.to(badAlien.current, {
+      duration: 3,
+      x: -150,
+      y: -500,
+      ease: 'none',
+    });
+  };
 
   //badAlien
   useGSAP(() => {
     const animate = () => {
-      const element = badAlien.current;
-      if (element) {
-        const randomX = Math.random() * 300;
-        const randomY = Math.random() * 500;
+      const tween = gsap.to(badAlien.current, {
+        duration: 4,
+        x: 'random(-300, 0)',
+        y: 'random(0, 500)',
+        delay: 1,
+        ease: 'none',
+        paused: alienIsBubbled,
+        onComplete: animate, // Call the function again when the animation completes
+      });
 
-        gsap.to(element, {
-          duration: 4,
-          x: randomX,
-          y: randomY,
-          delay: 2,
-          ease: 'none',
-          onComplete: animate, // Call the function again when the animation completes
-        });
-      }
+      return tween;
     };
 
-    animate();
+    const tween = animate();
+
+    return () => tween.kill();
   });
+
+  const text =
+    textIsHide === true ? null : <div className={styles.textOfAlien}></div>;
+
+  const alienForm =
+    alienIsBubbled === true ? (
+      <div className={styles.bubbledAlien}></div>
+    ) : (
+      <div
+        className={styles.badAlien}
+        onClick={() => {
+          dispatch(addBubble());
+          dispatch(addCatchedAlien());
+          movementTop();
+          setTimeout(() => dispatch(removeBubble()), 3000);
+        }}></div>
+    );
 
   return (
     <div className={styles.alienWithText} ref={badAlien}>
-      <div
-        className={styles.badAlien}
-        onClick={() => dispatch(addCatchedAlien())}></div>
-      <div className={styles.textOfAlien}></div>
+      {alienForm}
+      <div>{text}</div>
     </div>
   );
 };
