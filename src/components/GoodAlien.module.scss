@@ -26,3 +26,12 @@
   width: 100px;
   height: 100px;
 }
+
+.stoppedAlien {
+  background-image: url('/src/assets/stop.svg'),
+    url('/src/assets/shipYellow_manned.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
