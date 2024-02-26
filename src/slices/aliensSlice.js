@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   entities: {
-    alienGood: { textIsHide: false, isClickable: true },
-    alienBad: { textIsHide: false, isClickable: true },
+    alienGood: { textIsHide: false, isStopped: false },
+    alienBad: { textIsHide: false, isBubbled: false },
   },
   ids: ['alienGood', 'alienBad'],
   catchedAliensCounter: 0,
@@ -17,7 +17,16 @@ const aliensSlice = createSlice({
       state.catchedAliensCounter += 1;
     },
     addBubble: (state) => {
-      state.entities.alienGood.isClickable = false;
+      state.entities.alienBad.isBubbled = true;
+    },
+    removeBubble: (state) => {
+      state.entities.alienBad.isBubbled = false;
+    },
+    addStop: (state) => {
+      state.entities.alienGood.isStopped = true;
+    },
+    removeStop: (state) => {
+      state.entities.alienGood.isStopped = false;
     },
     hideTextGood: (state) => {
       state.entities.alienGood.textIsHide = true;
@@ -25,10 +34,25 @@ const aliensSlice = createSlice({
     hideTextBad: (state) => {
       state.entities.alienBad.textIsHide = true;
     },
+    showTextGood: (state) => {
+      state.entities.alienGood.textIsHide = false;
+    },
+    showTextBad: (state) => {
+      state.entities.alienBad.textIsHide = false;
+    },
   },
 });
 
-export const { addCatchedAlien, addBubble, hideTextGood, hideTextBad } =
-  aliensSlice.actions;
+export const {
+  addCatchedAlien,
+  addBubble,
+  hideTextGood,
+  hideTextBad,
+  removeBubble,
+  addStop,
+  removeStop,
+  showTextBad,
+  showTextGood,
+} = aliensSlice.actions;
 
 export default aliensSlice.reducer;
