@@ -12,12 +12,16 @@ import { useGSAP } from '@gsap/react';
 import { BadAlien } from '../components/BadAlien';
 import { GoodAlien } from '../components/GoodAlien';
 
+import { useNavigate } from 'react-router-dom';
+
 const GamePage = () => {
   const dispatch = useDispatch();
   const time = useSelector((state) => state.timer.value);
   const catchedAliens = useSelector(
     (state) => state.aliens.catchedAliensCounter
   );
+
+  const navigate = useNavigate();
 
   const unit1 = useRef();
   const unit2 = useRef();
@@ -86,6 +90,7 @@ const GamePage = () => {
 
   useEffect(() => {
     if (time > 29) {
+      navigate('/theend');
       return;
     }
 
@@ -96,10 +101,20 @@ const GamePage = () => {
     return () => clearInterval(intervalOfGame);
   });
 
+  const timerStyle = time < 10 ? `00:0${time}` : `00:${time}`;
+  const aliensCounter =
+    catchedAliens < 10 ? `0${catchedAliens}/10` : `${catchedAliens}/10`;
+
   return (
     <div className={styles.game}>
-      <div>{time}</div>
-      <div>{catchedAliens}</div>
+      <div className={styles.catchedAliens}>
+        <div className={styles.alienIcon}></div>
+        {aliensCounter}
+      </div>
+      <div className={styles.timer}>
+        <div className={styles.timerIcon}></div>
+        {timerStyle}
+      </div>
       <GoodAlien></GoodAlien>
       <BadAlien></BadAlien>
       <div ref={unit1} className={styles.unit1}></div>

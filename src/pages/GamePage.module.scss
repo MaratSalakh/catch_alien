@@ -7,7 +7,7 @@
 
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 5% 75% 5% 5%;
+  grid-template-rows: 10% 70% 5% 5%;
   justify-items: center;
   align-items: center;
 }
@@ -40,4 +40,52 @@
   height: 80px;
   justify-self: start;
   align-self: flex-start;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 90px;
+  background-color: #c7d5f2f2;
+  border-color: black;
+  border-style: solid;
+  border-radius: 6px;
+  border-width: 3px;
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.timerIcon {
+  background-image: url('/src/assets/Captura\ de\ Pantalla\ 2024-02-14\ a\ las\ 10.09\ 1.svg');
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.catchedAliens {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 90px;
+  background-color: #c7d5f2f2;
+  border-color: black;
+  border-style: solid;
+  border-radius: 6px;
+  border-width: 3px;
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.alienIcon {
+  background-image: url('/src/assets/shipGreen_manned_little.svg');
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
