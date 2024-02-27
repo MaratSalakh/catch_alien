@@ -48,7 +48,7 @@ export const BadAlien = () => {
       const tween = gsap.to(badAlien.current, {
         duration: 4,
         x: 'random(-300, 0)',
-        y: 'random(0, 500)',
+        y: 'random(0, 450)',
         delay: 1,
         ease: 'none',
         paused: alienIsBubbled,

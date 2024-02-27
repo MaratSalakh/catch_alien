@@ -40,7 +40,7 @@ export const GoodAlien = () => {
         gsap.to(element, {
           duration: 4,
           x: 'random(0, 300)',
-          y: 'random(0, 500)',
+          y: 'random(0, 450)',
           delay: 2,
           ease: 'none',
           onComplete: animate, // Call the function again when the animation completes
