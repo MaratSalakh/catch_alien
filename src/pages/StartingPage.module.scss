@@ -10,6 +10,15 @@
   align-items: center;
 }
 
+.startingPage::before {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .alienBubble {
   background-image: url('/src/assets/alienInBubble.svg');
   background-size: contain;
@@ -17,15 +26,14 @@
   margin-top: 10vh;
   width: 40vw;
   height: 70vh;
+  z-index: 1;
 }
 
 .greeting {
-  margin-top: 10vh;
-  color: yellow;
-  font-size: 30px;
+  color: #ffbf1a;
   font-weight: bolder;
-  width: 50vw;
   text-align: center;
+  z-index: 1;
 }
 
 .startButton {
@@ -40,6 +48,7 @@
   border-style: none;
   padding: 20px;
   text-decoration: none;
+  z-index: 1;
 
   &:hover {
     background-color: #de2a1d;

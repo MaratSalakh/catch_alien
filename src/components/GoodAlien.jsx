@@ -39,7 +39,7 @@ export const GoodAlien = () => {
       if (element) {
         gsap.to(element, {
           duration: 4,
-          x: 'random(0, 300)',
+          x: 'random(0, 250)',
           y: 'random(0, 450)',
           delay: 2,
           ease: 'none',

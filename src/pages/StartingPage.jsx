@@ -24,7 +24,7 @@ const StartingPage = () => {
       <div
         ref={container}
         className={('alienBubble', styles.alienBubble)}></div>
-      <span className={styles.greeting}>Поймай пришельца!</span>
+      <h1 className={styles.greeting}>Поймай пришельца!</h1>
       <Link className={styles.startButton} to="/1">
         НАЧАТЬ
       </Link>
