@@ -36,7 +36,14 @@ const aliensSlice = createSlice({
   initialState,
   reducers: {
     addCatchedAlien: (state) => {
-      state.catchedAliensCounter += 1;
+      if (state.catchedAliensCounter < 11) {
+        state.catchedAliensCounter += 1;
+      }
+    },
+    removeCatchedAlien: (state) => {
+      if (state.catchedAliensCounter > 0) {
+        state.catchedAliensCounter -= 1;
+      }
     },
     addBubble: (state) => {
       state.entities.alienBad.isBubbled = true;
@@ -73,6 +80,7 @@ const aliensSlice = createSlice({
 
 export const {
   addCatchedAlien,
+  removeCatchedAlien,
   addBubble,
   hideTextGood,
   hideTextBad,

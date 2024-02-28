@@ -3,6 +3,7 @@
   background-repeat: repeat-x;
   background-size: cover;
   height: 100vh;
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
@@ -76,5 +77,89 @@
 
   &:hover {
     background-color: #de2a1d;
+  }
+}
+
+@media (min-width: 768px) {
+  .startingPage {
+    background-image: url('/src/assets/pixel-cityscape-8-bit-pixel-art-game-landscape-vector\ 1.svg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    width: 425px;
+    height: 650px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .woodenBG {
+    margin: 20px;
+    height: 600px;
+    width: 350px;
+    background-size: cover;
+    background-image: url('/src/assets/woodenBG.svg');
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .alien {
+    background-image: url('/src/assets/shipYellow_manned.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+  }
+
+  .stoppedAlien {
+    background-image: url('/src/assets/stop.svg'),
+      url('/src/assets/shipYellow_manned.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+  }
+
+  .hand {
+    background-image: url('/src/assets/hand.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 130px;
+  }
+
+  .instruction {
+    background-image: url('/src/assets/secondInstruction.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 220px;
+  }
+
+  .startButton {
+    font-family: sans-serif;
+
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    background-color: #f14338;
+    border-radius: 6px;
+    border-style: none;
+    margin-bottom: 15px;
+    width: 255px;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      background-color: #de2a1d;
+    }
   }
 }

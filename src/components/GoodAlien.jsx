@@ -8,6 +8,8 @@ import {
   addStop,
   removeStop,
   showTextGood,
+  changeChosenTextGood,
+  removeCatchedAlien,
 } from '../slices/aliensSlice';
 
 import { useGSAP } from '@gsap/react';
@@ -51,14 +53,35 @@ export const GoodAlien = () => {
     animate();
   });
 
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
+  const chosenText = useSelector(
+    (state) => state.aliens.entities.alienGood.chosenText
+  );
+
+  const randomText = useSelector(
+    (state) => state.aliens.entities.alienGood.texts
+  )[chosenText];
+
+  const text =
+    textIsHide === true ? null : (
+      <div className={styles.textBG}>
+        <span className={styles.textOfAlien}>{randomText}</span>
+      </div>
+    );
+
   const alien =
     alienIsStopped === true ? (
       <div className={styles.stoppedAlien}></div>
     ) : (
       <div
         onClick={() => {
+          dispatch(removeCatchedAlien());
           dispatch(addStop());
           dispatch(showTextGood());
+          dispatch(changeChosenTextGood(getRandomInt(5)));
           setTimeout(() => {
             dispatch(removeStop());
             dispatch(hideTextGood());
@@ -66,9 +89,6 @@ export const GoodAlien = () => {
         }}
         className={styles.goodAlien}></div>
     );
-
-  const text =
-    textIsHide === true ? null : <div className={styles.textOfAlien}></div>;
 
   return (
     <div className={styles.alienWithText} ref={goodAlien}>

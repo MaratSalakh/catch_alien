@@ -4,6 +4,7 @@
   background-repeat: repeat-x;
   background-size: cover;
   height: 100vh;
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
@@ -52,5 +53,65 @@
 
   &:hover {
     background-color: #de2a1d;
+  }
+}
+
+@media (min-width: 768px) {
+  .startingPage {
+    background-image: url('/src/assets/pixel-cityscape-8-bit-pixel-art-game-landscape-vector\ 1.svg');
+    background-color: red;
+    background-repeat: repeat-x;
+    background-size: cover;
+    width: 425px;
+    height: 650px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .startingPage::before {
+    content: '';
+    display: block;
+    width: 425px;
+    height: 650px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .alienBubble {
+    background-image: url('/src/assets/alienInBubble.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 65px;
+    width: 170px;
+    height: 170px;
+    z-index: 1;
+  }
+
+  .greeting {
+    color: #ffbf1a;
+    font-weight: bolder;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .startButton {
+    font-family: sans-serif;
+    margin-top: 270px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    background-color: #f14338;
+    border-radius: 6px;
+    border-style: none;
+    padding: 20px;
+    text-decoration: none;
+    z-index: 1;
+
+    &:hover {
+      background-color: #de2a1d;
+    }
   }
 }

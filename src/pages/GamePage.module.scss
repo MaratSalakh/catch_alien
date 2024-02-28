@@ -89,3 +89,97 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+@media (min-width: 768px) {
+  .game {
+    background-image: url('/src/assets/pixel-cityscape-8-bit-pixel-art-game-landscape-vector\ 1.svg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    width: 425px;
+    height: 650px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 70% 5% 5%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .unit1 {
+    background-image: url('/src/assets/man1.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 80px;
+    justify-self: start;
+    align-self: flex-start;
+  }
+
+  .unit2 {
+    background-image: url('/src/assets/men2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 80px;
+    justify-self: start;
+    align-self: flex-start;
+  }
+
+  .unit3 {
+    background-image: url('/src/assets/men3.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 80px;
+    justify-self: start;
+    align-self: flex-start;
+  }
+
+  .timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 90px;
+    background-color: #c7d5f2f2;
+    border-color: black;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 3px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .timerIcon {
+    background-image: url('/src/assets/Captura\ de\ Pantalla\ 2024-02-14\ a\ las\ 10.09\ 1.svg');
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .catchedAliens {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 90px;
+    background-color: #c7d5f2f2;
+    border-color: black;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 3px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .alienIcon {
+    background-image: url('/src/assets/shipGreen_manned_little.svg');
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
