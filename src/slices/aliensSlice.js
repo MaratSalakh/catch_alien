@@ -2,8 +2,30 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   entities: {
-    alienGood: { textIsHide: false, isStopped: false },
-    alienBad: { textIsHide: false, isBubbled: false },
+    alienGood: {
+      textIsHide: false,
+      isStopped: false,
+      texts: [
+        'ХОЧУ ДОМОЙ...',
+        'ГОВОРИЛА МНЕ МАМА ДАЛЕКО НЕ УЛЕТАТЬ...',
+        'КУДА Я ЛЕЧУ? ЗАЧЕМ? ДЛЯ ЧЕГО?',
+        'У ВАС ЕСТЬ МАКАРОНЫ ПО СКИДКЕ?',
+        'НА ПОСЛЕДНИЙ АВТОБУС НЕ УСПЕВАЮ...',
+      ],
+      chosenText: 0,
+    },
+    alienBad: {
+      textIsHide: false,
+      isBubbled: false,
+      texts: [
+        'Я ПРИШЕЛ С МИРОМ! ИЛИ НЕТ...',
+        'Я ЗАХВАЧУ ПИЦЦУ!',
+        'ААААААААААААА!!!!',
+        'ЗА ПЛУТОН!!',
+        'УКРАДУ ГАРАЖ!',
+      ],
+      chosenText: 0,
+    },
   },
   ids: ['alienGood', 'alienBad'],
   catchedAliensCounter: 0,
@@ -40,6 +62,12 @@ const aliensSlice = createSlice({
     showTextBad: (state) => {
       state.entities.alienBad.textIsHide = false;
     },
+    changeChosenTextBad: (state, action) => {
+      state.entities.alienBad.chosenText = action.payload;
+    },
+    changeChosenTextGood: (state, action) => {
+      state.entities.alienGood.chosenText = action.payload;
+    },
   },
 });
 
@@ -53,6 +81,8 @@ export const {
   removeStop,
   showTextBad,
   showTextGood,
+  changeChosenTextBad,
+  changeChosenTextGood,
 } = aliensSlice.actions;
 
 export default aliensSlice.reducer;

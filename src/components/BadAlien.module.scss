@@ -10,13 +10,24 @@
   height: 200px;
 }
 
-.textOfAlien {
-  background-image: url('/src/assets/У\ ВАС\ ЕСТЬ\ МАКАРОНЫ\ ПО\ СКИДКЕ_.svg'),
-    url('/src/assets/бабл.svg');
+.textBG {
+  display: flex;
+  flex-direction: column;
+
+  background-image: url('/src/assets/бабл.svg');
   background-size: contain;
   background-repeat: no-repeat;
   width: 100px;
   height: 100px;
+}
+
+.textOfAlien {
+  overflow-wrap: break-word;
+  align-self: center;
+  text-align: center;
+  margin-top: 20px;
+  width: 100px;
+  height: 80px;
 }
 
 .badAlien {

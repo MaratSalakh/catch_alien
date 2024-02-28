@@ -9,6 +9,7 @@ import {
   addCatchedAlien,
   addBubble,
   showTextBad,
+  changeChosenTextBad,
 } from '../slices/aliensSlice';
 
 import { useGSAP } from '@gsap/react';
@@ -63,8 +64,24 @@ export const BadAlien = () => {
     return () => tween.kill();
   });
 
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
+  const chosenText = useSelector(
+    (state) => state.aliens.entities.alienBad.chosenText
+  );
+
+  const randomText = useSelector(
+    (state) => state.aliens.entities.alienBad.texts
+  )[chosenText];
+
   const text =
-    textIsHide === true ? null : <div className={styles.textOfAlien}></div>;
+    textIsHide === true ? null : (
+      <div className={styles.textBG}>
+        <span className={styles.textOfAlien}>{randomText}</span>
+      </div>
+    );
 
   const alienForm =
     alienIsBubbled === true ? (
@@ -75,6 +92,7 @@ export const BadAlien = () => {
         onClick={() => {
           dispatch(addBubble());
           dispatch(addCatchedAlien());
+          dispatch(changeChosenTextBad(getRandomInt(5)));
           movementTop();
           setTimeout(() => {
             dispatch(removeBubble());
