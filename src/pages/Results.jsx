@@ -1,9 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 import styles from './Results.module.scss';
 
 import { Link } from 'react-router-dom';
 
+import { refreshCatchedAlien } from '../slices/aliensSlice';
+
+import { refreshTime } from '../slices/timerSlice';
+
 const Results = () => {
+  const dispatch = useDispatch();
   const points = useSelector((state) => state.aliens.catchedAliensCounter);
 
   let stars;
@@ -43,7 +49,13 @@ const Results = () => {
         {stars}
         <h1 className={styles.text}>{`Поймано ${points}/10!`}</h1>
         <span className={styles.text}>{description}</span>
-        <Link className={styles.startButton} to="/2">
+        <Link
+          onClick={() => {
+            dispatch(refreshCatchedAlien());
+            dispatch(refreshTime());
+          }}
+          className={styles.startButton}
+          to="/2">
           ЕЩЕ РАЗ!
         </Link>
         <span className={styles.text}>поделиться</span>

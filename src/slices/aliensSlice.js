@@ -45,6 +45,9 @@ const aliensSlice = createSlice({
         state.catchedAliensCounter -= 1;
       }
     },
+    refreshCatchedAlien: (state) => {
+      state.catchedAliensCounter = 0;
+    },
     addBubble: (state) => {
       state.entities.alienBad.isBubbled = true;
     },
@@ -91,6 +94,7 @@ export const {
   showTextGood,
   changeChosenTextBad,
   changeChosenTextGood,
+  refreshCatchedAlien,
 } = aliensSlice.actions;
 
 export default aliensSlice.reducer;
